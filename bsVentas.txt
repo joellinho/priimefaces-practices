@@ -1,0 +1,94 @@
+CREATE DATABASE VENTAS;
+-- =============================================
+-- Seleccionar la Base de Datos
+-- =============================================
+USE VENTAS;
+SET NAMES 'utf8';
+-- =============================================
+-- CREACION DE TABLAS DE EMPLEADOS
+-- =============================================
+create table PERSONA(
+codigo Integer auto_increment NOT null ,
+nombre varchar(50) not null,
+sexo char(1) not null,
+primary key(codigo)
+);
+insert into PERSONA(nombre,sexo)
+values ('joel enciso','M');
+insert into PERSONA(nombre,sexo)
+values ('milhouse','M');
+insert into PERSONA(nombre,sexo)
+values ('johana','F');
+insert into Persona(nombre,sexo)
+values('jamiea','F');
+-- =============================================
+-- CREACION DE TABLAS DEL CATALOGO
+-- =============================================
+CREATE TABLE CATEGORIA
+(
+idcat INTEGER NOT NULL COMMENT 'Identificador de categoría.',
+nombre VARCHAR(50) NOT NULL COMMENT 'Nombre de categoría.',
+PRIMARY KEY (idcat)
+) COMMENT='Tabla de categorías.';
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(1,'LINEA BLANCA');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(2,'MENAJE');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(3,'CAMA');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(4,'MUEBLES');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(5,'ROPA DE DAMAS');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(6,'ROPA DE CABALLEROS');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(7,'ROPA DE SEÑORITAS');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(8,'ROPA DE NIÑOS');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(9,'ROPA DE NIÑAS');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(10,'ELECTRODOMESTICOS');
+INSERT INTO CATEGORIA(IDCAT,NOMBRE) VALUES(11,'COMPUTO');
+CREATE TABLE PRODUCTO
+(
+idprod INTEGER AUTO_INCREMENT COMMENT 'Identificador de producto.',
+idcat INTEGER NOT NULL COMMENT 'Identificador de categoría.',
+nombre VARCHAR(100) NOT NULL COMMENT 'Nombre de producto.',
+precio NUMERIC(10,2) NOT NULL COMMENT 'Precio del producto.',
+stock INTEGER NOT NULL COMMENT 'Stock del producto.',
+PRIMARY KEY (idprod),
+FOREIGN KEY FK_PRODUCTO_CATEGORIA (idcat) REFERENCES CATEGORIA (idcat)
+) COMMENT='Tabla de productos.';
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(1,1,'COCINA',900.0,456);
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(2,7,'PANTALON',150.0,4567);
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(3,1,'REFRIGERADORA',1300.0,690);
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(4,7,'POLO DE VERANO',95.00,150);
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(5,6,'CAMISA COLOR VERDE',140.00,250);
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(6,6,'CAMISA DE CUADROS PEQUEÑOS',140.00,350);
+INSERT INTO PRODUCTO(IDPROD,IDCAT,NOMBRE,PRECIO,STOCK)
+VALUES(7,6,'PANTALON MODELO A1',1180.00,450);
+-- =============================================
+-- CREACION DE TABLAS DE VENTAS
+-- =============================================
+CREATE TABLE VENTA
+(
+idventa INTEGER AUTO_INCREMENT COMMENT 'Identificador de venta.',
+idpersona int NOT NULL COMMENT 'Nombre del cliente.',
+fecha DATE NOT NULL COMMENT 'Fecha de venta.',
+importe NUMERIC(10,2) NOT NULL COMMENT 'Importe de la venta.',
+PRIMARY KEY (idventa),
+FOREIGN KEY FK_VENTA_ClIENTE (idpersona) REFERENCES PERSONA (codigo)
+) COMMENT='Tabla de ventas.';
+CREATE TABLE DETALLE
+(
+iddetalle INTEGER AUTO_INCREMENT COMMENT 'Identificador del detalle.',
+idventa INTEGER NOT NULL COMMENT 'Identificador de venta.',
+idprod INTEGER NOT NULL COMMENT 'Identificador de producto.',
+cant NUMERIC NOT NULL COMMENT 'Cantidad vendida.',
+PRIMARY KEY (iddetalle),
+FOREIGN KEY FK_DETALLE_PRODUCTO (idprod) REFERENCES PRODUCTO (idprod),
+FOREIGN KEY FK_DETALLE_VENTA (idventa) REFERENCES VENTA (idventa)
+) COMMENT='Tabla de detalle de ventas.';
+CREATE UNIQUE INDEX U_DETALLE ON DETALLE
+(
+idventa,
+idprod
+);
