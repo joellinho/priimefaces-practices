@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+       
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/plantilla.xhtml">
+
+            <ui:define name="content">
+                <h:form id="frm">
+                    <p:commandButton value="Nuevo" oncomplete="PF('dlgWdatos').show();" actionListener="#{productoBean.setAccion('registrar')}" update=":dlgdatos"/>    
+                <p:commandButton value="Listar Productos" actionListener="#{productoBean.listar()}" update="data" />
+                
+                <p:dataTable id="data" value="#{productoBean.listaProducto}" var="producto" >
+                   <!-- <p:column headerText="idprod" ><p:outputLabel  value="#{producto.idprod}"/></p:column>-->
+                   <!--<p:column headerText="idcat"><p:outputLabel value="#{producto.categoria.idcat}"/></p:column>-->
+                    <p:column headerText="nombre"><p:outputLabel value="#{producto.nombre}"/></p:column>
+                    <p:column headerText="precio"><p:outputLabel value="#{producto.precio}"/></p:column>
+                    <p:column headerText="stock"><p:outputLabel value="#{producto.stock}"/></p:column>
+                       <p:column headerText="Eliminar">
+                         <p:commandButton value="Eliminar" actionListener="#{productoBean.eliminar(producto)}" update="data" icon="ui-icon-trash" /> 
+                         <p:commandButton value="Modificar" oncomplete="PF('dlgWdatos').show();" actionListener="#{productoBean.leerId(producto)}" update=":dlgdatos" icon="ui-icon-trash" /> 
+               
+                       </p:column>
+                  
+                </p:dataTable>
+               
+                </h:form>
+                
+                 
+                <p:dialog widgetVar="dlgWdatos" id="dlgdatos" header="operaciones" modal="true" showEffect="explode">
+                    <h:form>
+                    <p:panelGrid columns="2" >
+                        <p:outputLabel value="idcategoria"/>
+                       
+                       <p:inputText value="#{productoBean.categoria.idcat}"  />
+                        <p:outputLabel value="Nombre"/>
+                        <p:inputText value="#{productoBean.producto.nombre}" />
+                        <p:outputLabel value="Precio"/>
+                        <p:inputText value="#{productoBean.producto.precio}" />
+                        <p:outputLabel value="Stock"/>
+                        <p:inputText value="#{productoBean.producto.stock}" />
+                        <p:commandButton value="#{productoBean.accion}" actionListener="#{productoBean.operar()}"  oncomplete="PF('dlgWdatos').hide()" update=":frm:data" />
+                        
+                        
+                    </p:panelGrid>
+                        </h:form>
+                        
+                </p:dialog>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

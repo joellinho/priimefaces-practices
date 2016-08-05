@@ -1,0 +1,79 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .campo{
+                background-color: activecaption
+
+            }
+            .campo:focus{
+                background-color: chartreuse
+            }
+
+        </style>
+        <script >
+            function validar() {
+                valor = document.getElementById('form:email');
+                if (valor.value == '') {
+                    alert('ingrese un email');
+                    return false;
+                }
+                return true;
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <h:form id="form">
+            <p>propiedades inputtext</p>
+            <h:inputText value="ingrese texto" maxlength="40" size="20" title="ingrese text" onfocus="this.value = ''" id="email"
+                         styleClass="campo"/>
+            <h:selectOneMenu id="selecccion" value="#{favorito.itemFavorito}">
+                <f:selectItem itemLabel="primero" itemValue="1"/>
+                <f:selectItem itemLabel="segundo" itemValue="2"/>
+                <f:selectItem itemLabel="tercero" itemValue="3"/>
+                <f:selectItem itemLabel="cuarto" itemValue="4"/>
+            </h:selectOneMenu>
+            <h:commandButton value="asignar" onclick="return validar()" action="#{favorito.validar()}" id="asignar"/>
+            <br/>
+            <h:outputText value="#{favorito.itemFavorito}"/>
+            <br/>
+        </h:form>
+        <h:form>
+            <h:selectManyListbox id="selecciones" value="#{favorito.itemsfavotiros}">
+                <f:selectItem itemLabel="item1" itemValue="primero"/>
+                <f:selectItem itemLabel="item2" itemValue="segudo"/> 
+                <f:selectItem itemLabel="item3" itemValue="tercero"/>   
+                <f:selectItem itemLabel="item4" itemValue="cuarto"/>   
+            </h:selectManyListbox>
+            <h:commandButton  value="añadirVarios" action="#{favorito.escojeritems()}"/>
+            <br/>
+            <ol>
+                <ui:repeat var="item" value="#{favorito.itemsfavotiros}">
+                    <li><h:outputText value="#{item}"/></li>
+                </ui:repeat>
+            </ol>               
+            <br/>    
+            <div>TODO write content</div>
+            <p> para iniciar la ayuda</p>
+            <h:commandButton value="regresar" action="index?faces-redirect=true"/>
+            
+            <h:outputLink value="http://www.google.com.br">outputlink a google
+                <f:param name="q" value="facebook"/>
+                <f:param name="gws_rd" value="ssl"/>
+            </h:outputLink>
+            <br/>
+            
+            <h:link value="ir a indes" outcome="index">link a index</h:link>
+            <br/>
+            <h:commandLink value="commandlink a formulario.xhtml" action="formulario"/>
+         </h:form>
+    </body>
+</html>

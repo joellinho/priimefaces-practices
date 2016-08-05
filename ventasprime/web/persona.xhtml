@@ -32,14 +32,11 @@
                     <p:commandButton value="Eliminar" actionListener="#{personaBean.eliminar(persona)}"  update="data"  icon="ui-icon-trash"/>
                 </p:column>
 
-
+               
 
             </p:dataTable>
 
-            <p:themeSwitcher id="basic" style="width:165px">
-                <f:selectItem itemLabel="Choose Theme" itemValue="" />
-                <f:selectItems value="#{themeChoices.themes}"/> 
-            </p:themeSwitcher>
+           
 
         </h:form>
 

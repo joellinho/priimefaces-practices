@@ -83,18 +83,18 @@ public class principal {
 
 
 /****************TEST CATEGORIA*************/
-    List<Categoria> listcat = new ArrayList<>();
-    Categoria cat;
-        try {
-            CategoriaDAO catdao = new CategoriaDAO();
-            listcat = catdao.encontar();
-            
-        } catch (Exception e) {
-        e.printStackTrace();
-        }finally{
-        cat = listcat.get(0);
-            System.out.println(cat.getIdcat()+cat.getNombre());
-        }
+//    List<Categoria> listcat = new ArrayList<>();
+//    Categoria cat;
+//        try {
+//            CategoriaDAO catdao = new CategoriaDAO();
+//            listcat = catdao.encontar();
+//            
+//        } catch (Exception e) {
+//        e.printStackTrace();
+//        }finally{
+//        cat = listcat.get(0);
+//            System.out.println(cat.getIdcat()+cat.getNombre());
+//        }
 
 
  ////////////////////////////////////
@@ -109,57 +109,76 @@ public class principal {
 //        }
  
  ////////////////////////////////////
- Categoria cat5 = new Categoria();
- cat5.setIdcat(12);
- cat5.setNombre("nueva categoria actualizada");
-        try {
-            CategoriaDAO catdao5 = new CategoriaDAO();
-            catdao5.modificar(cat5);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
- 
- /////////////////////////////////////
- 
-  Categoria cat2=null;
-        try {
-            CategoriaDAO catdao = new CategoriaDAO();
-            cat2 = catdao.leerId2(2);
-            
-        } catch (Exception e) {
-        e.printStackTrace();
-        }finally{
-        
-            System.out.println(cat2.getIdcat()+cat2.getNombre());
-        }
-       //////////////////////////////////////////////////
-       
-       
-   List<Producto> listprod = new ArrayList<>();
-       Producto prod=null;
-        try {
-            ProductoDAO proddao = new ProductoDAO();
-            listprod= proddao.encontar();
-        } catch (Exception e) {
-        e.printStackTrace();
-        }finally{
-        prod = listprod.get(0);
-            System.out.println(prod.getIdprod()+prod.getStock()+" "+prod.getCategoria().getIdcat());
-        }
-        //////////////////////////////////////////
-//        Categoria cat3 = new Categoria();
-//        cat3.setIdcat(2);
-//        cat3.setNombre("MENAJE");
-//        Producto prod3 = new Producto();
-//        prod3.setCategoria(cat3);
-//        prod3.setNombre("nuevo prod");
-//        prod3.setPrecio(12.0);
-//        prod3.setStock(50);
+// Categoria cat5 = new Categoria();
+// cat5.setIdcat(12);
+// cat5.setNombre("nueva categoria actualizada");
 //        try {
-//            ProductoDAO proDAO = new ProductoDAO();
-//            proDAO.registrar(prod3);
+//            CategoriaDAO catdao5 = new CategoriaDAO();
+//            catdao5.modificar(cat5);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
+// 
+ /////////////////////////////////////
+ 
+//  Categoria cat2=null;
+//        try {
+//            CategoriaDAO catdao = new CategoriaDAO();
+//            cat2 = catdao.leerId2(2);
+//            
+//        } catch (Exception e) {
+//        e.printStackTrace();
+//        }finally{
+//        
+//            System.out.println(cat2.getIdcat()+cat2.getNombre());
+//        }
+       //////////////////////////////////////////////////
+      
        
+       
+       
+       
+       
+       /**************TEST PRODUCTOS**************/
+       
+//   List<Producto> listprod = new ArrayList<>();
+//       Producto prod=null;
+//        try {
+//            ProductoDAO proddao = new ProductoDAO();
+//            listprod= proddao.encontar();
+//        } catch (Exception e) {
+//        e.printStackTrace();
+//        }finally{
+//        prod = listprod.get(0);
+//            System.out.println(prod.getIdprod()+prod.getStock()+" "+prod.getCategoria().getIdcat());
+//        }
+        //////////////////////////////////////////
+        Categoria cat3 = new Categoria();
+        cat3.setIdcat(2);
+     
+        Producto prod3 = new Producto();
+        prod3.setCategoria(cat3);
+        prod3.setNombre("nuevo prod");
+        prod3.setPrecio(12.0);
+        prod3.setStock(50);
+        try {
+            ProductoDAO proDAO = new ProductoDAO();
+            proDAO.registrar(prod3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       /////////////////////////////////////
+   
+  
+       Producto prod6=new Producto();
+       prod6.setIdprod(2);
+        try {
+            ProductoDAO proDAO6 = new ProductoDAO();
+           prod6= proDAO6.leerId(prod6);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally{
+            System.out.println(prod6.getIdprod()+" "+prod6.getNombre()+" "+prod6.getCategoria().getNombre());
+        }
 }}

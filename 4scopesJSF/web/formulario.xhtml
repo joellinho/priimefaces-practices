@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui ="http://java.sun.com/jsf/facelets"
+      xmlns:f ="http://java.sun.com/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form id="frm">
+            <h:messages/>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="nombre" />
+                <h:inputText value="#{registro.nombre}" size="20" id="nombre"/>
+                
+                <h:outputLabel value="e-mail"/>
+                <h:panelGroup>
+                    <!--<h:inputText value="" size="10"/>-->
+                    <h:inputText value="#{registro.email}" size="10" id="email" />
+                </h:panelGroup>
+                <h:outputLabel value="password"/>
+                <h:inputSecret value="#{registro.password}" size="20" id="password" />
+                <h:commandButton value="enviar" action="#{registro.registrar}" />
+                
+                
+            </h:panelGrid>
+            
+            
+            
+        </h:form>
+        
+        <div>TODO write content</div>
+    </body>
+</html>

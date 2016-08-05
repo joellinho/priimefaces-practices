@@ -44,7 +44,9 @@ public class ProductoDAO extends DAO {
                 nombre = rs.getString("nombre");
                 precio = rs.getDouble("precio");
                 stock = rs.getInt("stock");
+                
                 cat = catdao.leerId2(idcat);
+                prod.setIdprod(idprod);
                 prod.setCategoria(cat);
                 prod.setNombre(nombre);
                 prod.setPrecio(precio);
@@ -84,19 +86,19 @@ public class ProductoDAO extends DAO {
         Categoria cat3;
         try {
             this.conectar();
-            PreparedStatement st = getCn().prepareStatement("select idprod,idcat,nombre,precion,stock from porducto where idprod=?");
+            PreparedStatement st = getCn().prepareStatement("select idprod,idcat,nombre,precio,stock from producto where idprod=?");
             st.setInt(1, p.getIdprod());
             rs = st.executeQuery();
             CategoriaDAO catDao = new CategoriaDAO();
             while (rs.next()) {
                 per = new Producto();
-                idcat = rs.getInt("idcat");
-                per.setIdprod(rs.getInt("codigo"));
+                per.setIdprod(rs.getInt("idprod"));
+                idcat = rs.getInt("idcat");         
                 cat3= catDao.leerId2(idcat);
                 per.setCategoria(cat3);
                 per.setNombre(rs.getString("nombre"));
                 per.setPrecio(rs.getInt("precio"));
-                
+                per.setStock(rs.getInt("stock"));
             }
         } catch (Exception e) {
             throw e;
@@ -109,10 +111,12 @@ public class ProductoDAO extends DAO {
     public void modificar(Producto p) throws Exception {
         try {
             this.conectar();
-            PreparedStatement st = getCn().prepareStatement("UPDATE persona set nombre=?,sexo=? where codigo=?");
-            st.setString(1, p.getNombre());
-            st.setString(2, p.getSexo());
-            st.setInt(3, p.getCodigo());
+            PreparedStatement st = getCn().prepareStatement("UPDATE producto set idcat=?,nombre=?,precio=?,stock=?  where idprod=?");
+            st.setInt(1, p.getCategoria().getIdcat());
+            st.setString(2, p.getNombre());
+            st.setDouble(3, p.getPrecio());
+            st.setInt(4, p.getStock());
+            st.setInt(5, p.getIdprod());
             st.executeUpdate();
         } catch (Exception e) {
             throw e;
@@ -124,9 +128,9 @@ public class ProductoDAO extends DAO {
     public void eliminar(Producto p) throws Exception {
         try {
             this.conectar();
-            PreparedStatement st = getCn().prepareStatement("delete from persona where codigo=?");
+            PreparedStatement st = getCn().prepareStatement("delete from producto where idprod=?");
 
-            st.setInt(1, p.getCodigo());
+            st.setInt(1, p.getIdprod());
             st.executeUpdate();
         } catch (Exception e) {
             throw e;

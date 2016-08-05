@@ -1,0 +1,57 @@
+
+  
+.ui-corner-all {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+.ui-widget-content {
+    border: 1px solid #aaaaaa;
+    background: #ffffff  50% 50% repeat-x;
+    color: #BAFF75;
+}
+.ui-widget {
+    font-family: Gill Sans,Arial,sans-serif;
+    font-size: 1.2em;
+}
+.ui-menu, .ui-menu .ui-menu-child .ui-widget-content {
+    background: #ffffff;
+}
+.ui-menubar {
+    width: auto;
+}
+.ui-menu {
+    width: 12.5em;
+    padding: 0.3em;
+    position: relative;
+    outline: 0 none;
+}
+.ui-helper-clearfix {
+    display: block;
+}
+.ui-helper-clearfix {
+    display: inline-block;
+}
+
+.ui-widget-content {
+    border: 1px solid #aaaaaa;
+    background:#ffffff  50% 50% repeat-x;
+    color: #2c4359;
+}
+.ui-widget {
+    font-family: Gill Sans,Arial,sans-serif;
+    font-size: 1.2em;
+}
+user agent stylesheetdiv {
+    display: block;
+}
+
+
+Pseudo ::after element
+.ui-helper-clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
