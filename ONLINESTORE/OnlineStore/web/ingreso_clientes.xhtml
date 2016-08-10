@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Online Store</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css" />
+        <h:outputStylesheet library="css" name="loopedCarousel.css"/>
+        <h:outputScript library="js" name="jquery-1.4.2.min.js"/>
+    </h:head>
+    <h:body>
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo-interno">
+                <ui:include src="modulos/ofertas_interno.xhtml"/>
+                <!--fin ofertas-->
+                <div id="contenidos">
+                    <div id="col-categoria">
+                        <h1 class="titu-cat">#{msgs.categoria_productos}</h1>
+                        <ui:include src="modulos/categoria_productos.xhtml" />
+                    </div>
+                    <ui:include src="modulos/login.xhtml"/>
+                    <div style="clear:both;"></div>
+                </div>
+                <!--fin caja contenidos-->
+            </div>
+            <!--fin cuerpo-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>
+    </h:body>
+</html>
+

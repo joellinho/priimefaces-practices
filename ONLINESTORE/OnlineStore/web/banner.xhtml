@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+    <body>
+        <div id="banner">
+            <div id="loopedCarousel">
+                <script type="text/javascript" charset="utf-8">
+                    $(function(){
+                        $('#loopedCarousel').loopedCarousel();
+                    });
+                </script>
+                <div class="container">
+                    <div class="slides">
+
+                        <ui:repeat value="#{shoppingBean.banner}" var="banner">
+                            <div>
+                                <h:form>
+                                    <h:commandLink class="sinmargen" action="#{productoBean.mostrarDetalles(banner.cod_producto)}">
+                                        <img src="banner_productos/banners_grande/#{banner.banner_oferta_grande}" width="980" height="386" border="0"/>
+                                    </h:commandLink>
+                                </h:form>
+                            </div>
+                        </ui:repeat>
+
+                    </div>
+                </div>	
+                <a href="#" class="previous2"></a>
+                <a href="#" class="next2"></a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <link href="../css/estilos-cms.css" rel="stylesheet" type="text/css" />
+        <title>¡Usuario Registrado!</title>
+        <style>
+            body{
+                background: #FFF;
+            }
+            #contenido-local{
+                background:#95CB4E;
+                width: 485px;
+                padding: 15px;
+                margin: 0 auto;
+                margin-top: 10px;
+                border-radius: 14px;
+            }
+            #texto{
+                font-size: 1em;
+                font-family: Verdana, Arial;
+                color: #FFF;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1 class="titulos-admin">¡El usuario ha sido Registrado!</h1>
+        <div id="contenido-local">
+            <p id="texto">El Usuario ha sido registrado con exito con las siguientes credenciales:
+                <br/>
+                Nombres: #{usuarioBean.nombres}
+                <br/>
+                Usuario: #{usuarioBean.usuario}
+                <br/>
+                Password: ******
+            </p>
+        </div>
+    </h:body>
+</html>
+

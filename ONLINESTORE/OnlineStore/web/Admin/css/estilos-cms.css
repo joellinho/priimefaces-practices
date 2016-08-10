@@ -1,0 +1,257 @@
+body{
+    background:url(../imagenes/fondo-cms.jpg) repeat-x fixed;
+    margin:0;
+}
+p{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color:#000000;
+    margin:6px;
+}
+.texto-error{
+    color:#FFFFFF;
+    text-align:center;
+}
+.titulo-general{
+    width:932px;
+    padding:10px;
+    display:block;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    margin:15px auto;
+    margin-bottom:0;
+    background:#95CB4E;
+    color:#FFFFFF;
+}
+.titulos-internos{
+    width:880px;
+    padding:10px;
+    display:block;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    margin:15px auto;
+    margin-bottom:0;
+    background:#95CB4E;
+    color:#FFFFFF;
+}
+.titulos-admin{
+    width:500px;
+    padding:10px;
+    display:block;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    margin:15px auto;
+    margin-bottom:0;
+    background:#95CB4E;
+    color:#FFFFFF;
+    border-radius: 14px;
+}
+.texto-derecho{
+    text-align:right;
+}
+input{
+    padding:6px;
+    border:none;
+    background:#CCCCCC;
+}
+.advertencia{
+    text-align:center;
+    color:#CC0000;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+}
+.textocentro{
+    font-size:30px;
+    text-align:center;
+}
+#conectado-como{
+    float: right;
+    margin: 5px 30px 0 0;
+    font-family: Verdana, Arial;
+}
+/*-------------MAQUETACION CMS------------------*/
+#contenedor-login{
+    width:350px;
+    height:265px;
+    margin:10px auto;
+    background:url(../imagenes/fondo_login.png) no-repeat;
+    padding-top:104px;
+    margin-top:100px;
+}
+#contenedor-error{
+    width:264px;
+    height:228px;
+    margin:0 auto;
+    background:url(../imagenes/fondo_error.png) no-repeat;
+    padding:141px 43px 0 43px;
+    margin-top:100px;
+}
+#pie-login{
+    font-family: Verdana, Arial;
+    font-size: 0.9em;
+    color: green;
+    width:350px;
+    margin:0 auto;
+    margin-top: 90px;
+    text-align:center;
+}
+
+/*-------ESTILOS LOGIN---------*/
+.rotulos{
+    color:#FFFFFF;
+    text-align:center;
+}
+.campos{
+    width:232px;
+    display:block;
+    background:#9BD252;
+    margin:0 auto;
+    padding:10px 14px;
+    border:none;
+}
+.boton{
+    width:260px;
+    height:40px;
+    display:block;
+    background:url(../imagenes/boton.jpg) no-repeat;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+    text-align:center;
+    color:#FFFFFF;
+    border:none;
+    margin:0 auto;
+    margin-top:20px;
+}
+.boton-verde{
+    background: #95CB4E;
+    color: #FFF;
+    padding: 4px 6px 4px 6px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.boton-reg{
+    margin-top: 5px;
+    font-family: Verdana, Arial;
+    font-size: 1em;
+    background: #95CB4E;
+    color: #FFF;
+    padding: 6px 8px 6px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-eliminar{
+    background: #FFF;
+}
+/*--------Estilos Inicio--------*/
+.boton-verde:hover{
+    font-weight: bold;
+}
+#contenedor-cabecera{
+
+    height:132px;
+    background:url(../imagenes/cabecera-cms.jpg) no-repeat;
+    margin-bottom:5px;
+
+}
+#cabecera{
+    width:1000px;
+    height:96px;
+    margin:0 auto;
+    background:url(../imagenes/logo-cms.png) left no-repeat;
+}
+#menu{
+    width:1008px;
+    height:35px;
+    background:url(../imagenes/fondo-gris.jpg);
+    margin:0 auto; 
+}
+
+#contenedor{
+
+    width:1044px;
+    margin:0 auto;
+
+}
+
+#sombra-izq{
+
+    width:22px;
+    height:163px;
+    background:url(../imagenes/sombra-izquierda.png) no-repeat;
+    float:left;
+
+}
+
+#contenido{
+
+    width:1000px;
+    background:#FFFFFF;
+    float:left;
+
+}
+
+#sombra-der{
+
+    width:22px;
+    height:163px;
+    background:url(../imagenes/sombra-derecha.png) no-repeat;
+    float:left;
+
+}
+
+#piepagina{
+    height:55px;
+    width:1000px;
+    background:url(../imagenes/sombra-inferior.png) no-repeat top;
+    margin:0 auto;
+    padding-top:5px;
+}
+.caja-usuarios{
+
+    width:350px;
+    height:29px;
+    display:block;
+    float:right;
+    background:#95CB4E url(../imagenes/icono-cms.png) no-repeat left;
+    margin:0;
+    padding:10px 0 0 50px;
+    background-position:20px;
+    color:#26530C;
+}
+#cabecera-cms{
+    height:31px;
+    background:#FF9;
+    padding-top:5px;
+}
+#caja-contenido{
+    width:910px;
+    border:#999999 1px solid;
+    margin:0 auto;
+    padding:20px;
+}
+/*-----ESTILOS TABLAS-------------*/
+
+table.borde-tablas{
+    border:1px  #999999 solid;
+    border-collapse:collapse;
+}
+table.borde-tablas td{
+    border:1px #999999 solid;
+    padding:4px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color:#333;
+}
+table.borde-tablas th{
+    background:#E9E9E9;
+    padding:8px 4px;
+    border:1px #999999 solid;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color:#333;
+}

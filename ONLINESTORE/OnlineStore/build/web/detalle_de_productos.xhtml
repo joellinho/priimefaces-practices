@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Online Store</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css" />
+        <h:outputStylesheet library="css" name="SpryAssets/SpryTabbedPanels.css"/>
+        <script type="text/javascript" src="resources/css/SpryAssets/SpryTabbedPanels.js"></script>
+    </h:head>
+    <h:body>
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo-interno">
+                <ui:include src="modulos/ofertas_interno.xhtml"/>
+                <!--fin ofertas-->
+                <div id="contenidos">
+                    <div id="col-categoria">
+                        <h1 class="titu-cat">#{msgs.categoria_productos}</h1>
+                        <ui:include src="modulos/categoria_productos.xhtml" />
+                    </div>
+                    <div id="col-productos">
+                        <h1 class="titulos-productos">#{msgs.detalle_de_productos}</h1>
+                        <div id="detalle-productos">
+                            <h:form id="fcarrito">
+                                <img src="imagen_productos/imagen_productos/#{productoBean.img_producto}" width="203" height="248" class="img-produtos"/>
+                                <div id="caja-des">
+                                    <h1 class="nombre-producto">#{productoBean.nom_producto}</h1>
+                                    <p class="fecha-producto">#{msgs.fecha_ingreso} #{productoBean.fecha_ing}</p>
+                                    <p class="precio-normal">#{msgs.precio_normal} #{productoBean.precio_normal}</p>
+                                    <p class="precio-oferta">#{msgs.precio_oferta} #{productoBean.precio_oferta}</p>
+                                    <p>#{msgs.cantidad} 
+                                        <h:inputText id="cantidad" value="#{cartItemBean.cantidad}" validatorMessage="Debe escoger como mínimo un articulo.">
+                                            <f:validateLongRange minimum="1" maximum="1000" />
+                                        </h:inputText>
+                                        <h:message for="cantidad" style="color: red;"/>
+                                    </p>
+                                    <h1>
+                                        <h:commandButton id="boton1" value="#{msgs.btn_anadir_carrito}" 
+                                                         class="botoncarrito" 
+                                                         action="#{shoppingBean.addToCart(productoBean.cod_producto, cartItemBean.cantidad)}"/>
+                                    </h1>
+                                </div>
+                                <div style="clear:both"></div>
+                            </h:form>               
+                        </div>
+                        <!-- fin detalle productos -->
+                        <div id="TabbedPanels1" class="TabbedPanels">
+                            <ul class="TabbedPanelsTabGroup">
+                                <li class="TabbedPanelsTab" tabindex="0">#{msgs.tab_descripcion}</li>
+                                <li class="TabbedPanelsTab" tabindex="1">#{msgs.tab_imagenes}</li>
+                                <li class="TabbedPanelsTab" tabindex="2">#{msgs.tab_videos}</li>
+                            </ul>
+                            <div class="TabbedPanelsContentGroup">
+                                <div class="TabbedPanelsContent">
+                                    <h1 class="nombre-producto">#{productoBean.nom_producto}</h1>
+                                    <p>#{productoBean.descripcion}</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                                <div class="TabbedPanelsContent">
+                                    <h1 class="nombre-producto">#{productoBean.nom_producto}</h1>
+                                    <ul id="galeriaProducto">
+                                        <li><a href="#"><img src="imagen_productos/imagen_productos/#{productoBean.img_producto}" width="142" height="142" border="0" /></a></li>
+                                    </ul>
+                                </div>
+                                <div class="TabbedPanelsContent">
+                                    <h1 class="nombre-producto">#{productoBean.nom_producto}</h1>
+                                    <p><h:outputText rendered="#{empty productoBean.video_youtube}" value="#{msgs.msg_no_video}"/></p>
+                                    <c:if test="#{not empty productoBean.video_youtube}">
+                                        <iframe width="640" height="480" src="http://www.youtube.com/embed/#{productoBean.video_youtube}?feature=player_detailpage" frameborder="0" allowfullscreen="false">
+                                        </iframe>
+                                    </c:if>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both"></div>  
+                </div>
+                <!--fin caja contenidos-->
+            </div>
+            <!--cuerpo interno-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>
+        <script type="text/javascript">
+            var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+        </script>
+    </h:body>
+</html>

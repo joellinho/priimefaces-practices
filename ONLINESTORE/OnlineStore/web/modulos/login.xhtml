@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Online Store</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css"/>
+    </h:head>
+    <h:body>
+        <div id="col-productos">
+            <h1 class="titulos-productos">#{msgs.ingreso_exclusivo}</h1>
+            <h:form id="ftienda" >
+                <div id="ingreso-cliente">
+                    <p><strong>#{msgs.login_acceso_restringido}</strong></p>
+                    <p><h:outputLabel value="#{msgs.login_lbl_email}"/></p>
+                    <p>
+                        <h:inputText value="#{clienteBean.email}" class="campos-clientes" required="true" requiredMessage="Campo email es necesario."/>
+                    </p>
+                    <p><h:outputLabel value="#{msgs.login_lbl_clave}"/></p>
+                    <p>
+                        <h:inputSecret value="#{clienteBean.clave}" class="campos-clientes" required="true" requiredMessage="Campo password es necesario."/>
+                    </p>
+                    <p>
+                        <h:commandButton value="#{msgs.login_btn_ingresar}" class="boton-clientes" action="#{clienteBean.login}"/> 
+                        <h:messages style="color: red;"/>
+                    </p>
+                    <p>#{msgs.login_mensaje_inferior_1} <h:commandLink value="#{msgs.general_link_click_aqui}" action="registrar_clientes" class="link-normal" immediate="true"/> #{msgs.login_mensaje_inferior_2}</p>
+                </div>
+            </h:form>
+            <p>&nbsp;</p>
+        </div>
+    </h:body>
+</html>
+

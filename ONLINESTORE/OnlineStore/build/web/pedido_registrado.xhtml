@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Online Store - Pedido Registrado!</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css"/>
+    </h:head>
+    <h:body>
+
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo-interno">
+                <ui:include src="modulos/ofertas_interno.xhtml"/>
+                <!--fin ofertas-->
+                <div id="contenidos">
+                    <div id="col-categoria">
+                        <h1 class="titu-cat">#{msgs.categoria_productos}</h1>
+                        <ui:include src="modulos/categoria_productos.xhtml" />
+                    </div>
+                    <h:form>
+                        <div id="col-productos">
+                            <h1 class="titulos-productos">#{msgs.ingreso_exclusivo}</h1>
+                            <div id="ingreso-cliente">
+                                <p>#{msgs.felicidades} <h:outputLabel value="#{clienteBean.nombres}"/></p>
+                                <p><strong>#{msgs.pedido_reg_mensaje_1} </strong>#{msgs.pedidos_reg_mensaje_2}</p>
+                                <p>
+                                    <h:commandButton value="#{msgs.btn_ir_catalogo}" class="boton-clientes" action="catalogo_productos"/>
+                                    <br/>
+                                    <h:commandButton value="#{msgs.carrito_btn_cerrar_sesion}" class="boton-clientes" action="#{clienteBean.logout()}"/>
+                                </p>
+                            </div>
+                            <p>&nbsp;</p>
+                        </div>
+                    </h:form>
+                    <div style="clear:both;"></div>
+                </div>
+                <!--fin caja contenidos-->
+            </div>
+            <!--fin cuerpo-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>  
+    </h:body>
+</html>

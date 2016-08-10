@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div id="contenedor-cabecera">
+                <div id="cabecera">
+                    <p class="caja-usuarios"><h:outputLabel value="#{usuarioBean.nombreSession}" /></p>
+                </div>
+                <div id="menu">
+                    <ul id="MenuBar1" class="MenuBarHorizontal">
+                        <li><a href="inicio.xhtml" class="opciones">INICIO</a></li>
+                        <li><a href="usuarios.xhtml" class="opciones">USUARIOS</a>            </li>
+                        <!--<li><a href="#" class="opciones">PRODUCTOS</a>
+                            <ul>
+                                <li><a href="categoria_productos.xhtml">Categor&iacute;a de Productos</a></li>
+                                <li><a href="subcategoria_productos.xhtml">Sub Categor&iacute;a de Productos</a></li>
+                                <li><a href="productos.xhtml">Productos</a></li>
+                                <li><a href="pedidos_en_linea.xhtml">Pedidos en Linea</a></li>
+                            </ul>
+                        </li>-->
+                        <li><a href="pedidos.xhtml" class="opciones">PEDIDOS</a></li>
+                        <li><a href="clientes.xhtml" class="opciones">CLIENTES</a></li>
+                        <li><a href="contactos.xhtml" class="opciones">CONTACTOS</a></li>
+                        <li><a href="../index.xhtml" class="opciones">TIENDA</a></li>
+                        <li><h:commandLink value="#{msgs.carrito_btn_cerrar_sesion}" class="opciones" action="#{usuarioBean.logout()}"/></li>
+                    </ul>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+

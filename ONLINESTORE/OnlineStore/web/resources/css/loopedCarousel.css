@@ -1,0 +1,184 @@
+/* Required */
+.container {
+	height:386px;
+	overflow:hidden;
+	position:relative;
+	margin-left:-5px;
+}
+.slides {
+	position:absolute;
+	top:0px;
+	left:0;
+}
+.slides div {
+	position:absolute;
+	top:0;
+	width:980px;
+	height:386px;
+	display:none;
+	text-align:center;
+}
+/* Optional */
+#loopedCarousel {
+	margin:0 auto 20px auto;
+	padding:0px 0 0 0px;
+	width:980px!important;
+	height:386px;
+	position:relative;
+	clear:both;
+}
+ul.pagination {
+	list-style:none;
+	padding:0;
+	position:absolute;
+	right:27px;
+	bottom:5px;
+}
+ul.pagination li  {
+	float:left;
+	margin-right:3px;
+}
+ul.pagination li a {
+	background:url(../imagenes/vineta.png) 0px 0px no-repeat transparent;
+	width:12px;
+	height:12px;
+	font-size:0;
+	line-height:0;
+	display:block;
+	overflow:hidden;
+}
+ul.pagination li.active a, ul.pagination li a:hover {
+	background:url(../imagenes/vineta-act.png) 0px 0px no-repeat transparent;
+	width:12px;
+	height:12px;
+	font-size:0;
+	line-height:0;
+	display:block;
+	overflow:hidden;
+}
+.previous2{
+	background:url(../imagenes/flecha-izq-negra.png) left top no-repeat transparent;
+	width:65px;
+	height:108px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	position:absolute;
+	left:30px;
+	top:182px;
+}
+.previous2:hover{
+	background:url(../imagenes/flecha-izq-roja.png) left top no-repeat transparent;
+	width:65px;
+	height:108px;
+	display:block;
+	overflow:hidden;
+	float:left;
+}
+.next2{
+	background:url(../imagenes/flecha-der-negra.png) left top no-repeat transparent;
+	width:65px;
+	height:108px;
+	display:block;
+	overflow:hidden;
+	position:absolute;
+	right:30px;
+	top:182px;
+}
+.next2:hover{
+	background:url(../imagenes/flecha-der-roja.png) left top no-repeat transparent;
+	width:65px;
+	height:108px;
+	display:block;
+	overflow:hidden;
+}
+.carousel{
+	border:1px solid #e4e4e4;
+	width:980px!important;
+	height:386px!important;
+	padding:19px 0 0 0;
+	margin-bottom:10px;
+	margin-left:-1px;
+	position:relative;
+}
+.infoContentHeading{
+	 font-size:26px;
+	 line-height:30px;
+	 color:#000;
+	 position:relative;
+	 margin:3px 0 15px 10px;
+}
+.infoContentHeading .prev{
+	background:url('../imagenes/prev2.png') left top no-repeat transparent;
+	width:16px;
+	height:16px;
+	display:block;
+	overflow:hidden;
+	border:none;
+	position:absolute;
+	top:10px;
+	right:51px;
+}
+.infoContentHeading .next{
+	background:url('../imagenes/next2.png') left top no-repeat transparent;
+	width:16px;
+	height:16px;
+	display:block;
+	overflow:hidden;
+	border:none;
+	position:absolute;
+	top:10px;
+	right:30px;
+}
+.infoContentHeading .prev:hover{
+	background:url('../imagenes/prev2-act.png') left top no-repeat transparent;
+	width:16px;
+	height:16px;
+	display:block;
+	overflow:hidden;
+	border:none;
+	cursor:pointer;
+}
+.infoContentHeading .next:hover{
+	background:url('../imagenes/next2-act.png') left top no-repeat transparent;
+	width:16px;
+	height:16px;
+	display:block;
+	overflow:hidden;
+	border:none;
+	cursor:pointer;
+}
+.infoContentHeading button::-moz-focus-inner, 
+.infoContentHeading  input[type="reset"]::-moz-focus-inner,
+.infoContentHeading input[type="button"]::-moz-focus-inner,
+.infoContentHeading input[type="submit"]::-moz-focus-inner,
+.infoContentHeading select::-moz-focus-inner,
+.infoContentHeading input[type="file"] > input[type="button"]::-moz-focus-inner {
+	border: none;
+}
+.infoContentHeading .carousel-box2 a, :focus {
+	outline: none;
+}
+.li_carusel{
+	border-right:1px solid #e5e5e5;
+	margin-left:-1px;
+	position:relative;
+}
+.carousel .productSpecialPrice{
+	font-weight:bold;
+	font-size:18px!important;
+	color:#ffaa13;
+	overflow:hidden;
+	line-height:28px!important;
+	margin-bottom:5px;
+	margin-top:-5px;
+}
+.extra_price{
+	background:url('../imagenes/price.png') left top no-repeat transparent;
+	width:44px;
+	height:44px;
+	position:absolute;
+	right:19px;
+	top:0px;
+	z-index:9999;
+}

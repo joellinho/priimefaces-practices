@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>#{msgs.error_titulo}</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css"/>
+    </h:head>
+    <h:body>
+
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo-interno">
+                <ui:include src="modulos/ofertas_interno.xhtml"/>
+                <!--fin ofertas-->
+                <div id="contenidos">
+                    <div id="col-categoria">
+                        <h1 class="titu-cat">#{msgs.categoria_productos}</h1>
+                        <ui:include src="modulos/categoria_productos.xhtml" />
+                    </div>
+                    <h:form>
+                        <div id="col-seguridad">
+                            <h1 class="titulos-productos">#{msgs.error_mensaje_cabecera}</h1>
+                            <div id="error">
+                                <p><strong>#{msgs.error_mensaje_1} <h:commandLink value="#{msgs.error_link_aqui}" action="contacto" class="link-normal"/>
+                                        #{msgs.error_mensaje_2} <h:commandLink value="#{msgs.error_link_pag_inicio}" action="index" class="link-normal"/></strong></p>
+                                <p style="color: red;">#{msgs.error_mensaje_descripcion} <h:messages style="color: red;"/></p>
+                                <p style="text-align: center;">
+                                    <h:commandButton value="#{msgs.error_btn_pag_inicio}" class="boton-clientes" action="index"/>
+                                    <br/>
+                                    <h:commandButton value="#{msgs.contacto}" class="boton-clientes" action="contacto"/>
+                                </p>
+                            </div>
+                            <p>&nbsp;</p>
+                        </div>
+                    </h:form>
+                    <div style="clear:both;"></div>
+                </div>
+                <!--fin caja contenidos-->
+            </div>
+            <!--fin cuerpo-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>  
+    </h:body>
+</html>

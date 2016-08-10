@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <link href="css/estilos-cms.css" rel="stylesheet" type="text/css" />
+        <script src="../resources/css/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <link href="../resources/css/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery-1.6.1.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+        <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+        <title>Administración de la tienda Online</title>
+    </h:head>
+    <h:body>
+        <ui:include src="../modulos/cabecera_cms.xhtml"/>
+        <!--End Cabecera-->
+        <div id="contenedor">
+            <div id="sombra-izq">
+            </div>
+            <div id="contenido">
+                <div id="cabecera-cms">
+                    <p id="conectado-como">Conectado como: <h:outputText value="#{usuarioBean.nombreSession}"/>&nbsp;/&nbsp;<h:outputText value="#{usuarioBean.usuarioSession}"/></p>
+                </div>	
+                <h1 class="titulo-general">Administración</h1>
+                <div id="caja-contenido">
+                    <p>Bienvenido al Sistema de Administracion de la Tienda en 
+                        Línea, este Sistema esta hecho con el Framework JavaServer 
+                        Faces e interactúa con el Sistema de Gestión de Bases de 
+                        Datos de Oracle</p>
+                </div>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+            </div>
+            <div id="sombra-der">
+            </div>
+            <div style="clear:both"></div>    	
+        </div>
+        <!-- fin contenedor -->
+        <div style="text-align: center;">
+            <ui:include src="../modulos/pie_tienda.xhtml"/>
+        </div>
+        <script type="text/javascript">
+            var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"../resources/css/SpryAssets/SpryMenuBarDownHover.gif", imgRight:"../resources/css/SpryAssets/SpryMenuBarRightHover.gif"});
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function(){
+                $(".gallery a[rel^='prettyPhoto']").prettyPhoto({theme:'facebook'});
+            });
+        </script>
+    </h:body>
+</html>
+

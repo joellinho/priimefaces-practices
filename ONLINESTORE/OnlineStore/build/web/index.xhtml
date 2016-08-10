@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Online Store</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css" />
+        <h:outputStylesheet library="css" name="loopedCarousel.css"/>
+        <h:outputScript library="js" name="jquery-1.4.2.min.js"/>
+        <h:outputScript library="js" name="jcarousellite.js"/>
+        <h:outputScript library="js" name="loopedcarousel.js"/>
+    </h:head>
+    <h:body>
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="banner.xhtml"/>
+            <!--fin banner-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo">
+                <ui:include src="modulos/ofertas_interno.xhtml"/>
+                <!--fin ofertas-->
+                <div id="caja-productos">
+                    <ui:repeat value="#{shoppingBean.indexProductos}" var="productos">
+                        <div class="productos">
+                            <img src="imagen_productos/imagen_productos/#{productos.img_producto}" width="171" height="212" />
+                            <h:form>
+                                <div class="caja-precios">
+                                    <h1 class="nom-produc">#{productos.nom_producto}</h1>
+                                    <p class="precio">$. 
+                                        <h:outputText value="#{productos.precio_oferta}" rendered="${productos.oferta=='SI'}"></h:outputText>
+                                        <h:outputText value="#{productos.precio_normal}" rendered="${productos.oferta!='SI'}"></h:outputText>                                
+                                    </p>
+                                    <h:commandLink value="#{msgs.detalles}" class="detalles" action="#{productoBean.mostrarDetalles(productos.cod_producto)}"/>
+                                </div>
+                            </h:form>
+                        </div>
+                    </ui:repeat>
+                    <div style="clear:both;"></div>
+                </div>
+                <!--fin caja productos-->
+            </div>
+            <!--fin cuerpo-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>
+    </h:body>
+</html>

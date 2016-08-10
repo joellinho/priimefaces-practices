@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Online Store</title>
+    </h:head>
+    <h:body>
+
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo-interno">
+                <h1 class="titulo-carrito">#{msgs.pedidos_mensaje_principal}</h1>
+                <h:form id="fcarrito">
+                    <table width="900" border="0" align="center" cellpadding="2" cellspacing="2">
+                        <tr>
+                            <td bgcolor="#E22021"><p><h:commandLink value="#{msgs.carrito_btn_cerrar_sesion}" class="botones-carrito" action="#{clienteBean.logout()}"/></p></td>
+                            <td bgcolor="#E22021"><p class="texto-blanco">#{msgs.carrito_lbl_cod_cliente} #{clienteBean.cod_cliente} </p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#E22021"><p class="texto-blanco">#{msgs.carrito_lbl_cliente} #{clienteBean.nombres} #{clienteBean.apellidos}</p></td>
+                            <td bgcolor="#E22021"><p class="texto-blanco">#{msgs.carrito_lbl_email} #{clienteBean.email}</p></td>
+                        </tr>
+                    </table>
+                    <p>&nbsp;</p>
+                    <table width="900" border="0" align="center" cellpadding="2" cellspacing="2">
+                        <tr>
+                            <td width="42" bgcolor="#D8D8D8"><p>&nbsp;</p></td>
+                            <td width="304" bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_producto}</p></td>
+                            <td width="173" bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_cantidad}</p></td>
+                            <td width="173" bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_precio}</p></td>
+                            <td width="176" bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_total}</p></td>
+                        </tr>
+                        <ui:repeat value="#{shoppingBean.carrito}" var="item" varStatus="iterador">
+                            <tr>
+                                <td bgcolor="#efefef"><p>#{iterador.getIndex() + 1}</p></td>
+                                <td bgcolor="#efefef"><p>#{item.nom_producto}</p></td>
+                                <td bgcolor="#efefef"><p>#{item.cantidad}</p></td>
+                                <td bgcolor="#efefef"><p>$. #{item.precio}</p></td>
+                                <td bgcolor="#efefef"><p>$. #{item.total}</p></td>
+                            </tr>
+                        </ui:repeat>
+                    </table>
+                    <table width="900" border="0" align="center" cellpadding="2" cellspacing="2">
+                        <tr>
+                            <td width="353"><p>&nbsp;</p></td>
+                            <td width="172"><p>&nbsp;</p></td>
+                            <td width="174" bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_monto_total}</p></td>
+                            <td width="175" bgcolor="#D8D8D8"><p>$. #{shoppingBean.totalCarrito}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>&nbsp;</p></td>
+                            <td><p>&nbsp;</p></td>
+                            <td bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_igv}</p></td>
+                            <td bgcolor="#D8D8D8"><p>$. #{shoppingBean.IGV}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>&nbsp;</p></td>
+                            <td><p>&nbsp;</p></td>
+                            <td bgcolor="#D8D8D8"><p>#{msgs.carrito_lbl_neto}</p></td>
+                            <td bgcolor="#D8D8D8"><p>$. #{shoppingBean.neto}</p></td>
+                        </tr>
+                    </table>
+                    <h1 class="titulo-carrito">#{msgs.pedidos_datos}</h1>
+                    <table width="900" border="0" align="center" cellpadding="2" cellspacing="2">
+                        <tr>
+                            <td width="223" bgcolor="#EFEFEF"><p>#{msgs.pedidos_lbl_nombre}</p></td>
+                            <td width="663" bgcolor="#EFEFEF"><p>#{clienteBean.nombres}</p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF"><p>#{msgs.pedidos_lbl_apellidos}</p></td>
+                            <td bgcolor="#EFEFEF"><p>#{clienteBean.apellidos}</p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF"><p>#{msgs.pedidos_lbl_direccion}</p></td>
+                            <td bgcolor="#EFEFEF"><p>#{clienteBean.direccion}</p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF"><p>#{msgs.pedidos_lbl_telefono}</p></td>
+                            <td bgcolor="#EFEFEF"><p>#{clienteBean.telefono}</p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF"><p>#{msgs.pedidos_lbl_email}</p></td>
+                            <td bgcolor="#EFEFEF"><p>#{clienteBean.email}</p></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF"><p>#{msgs.pedidos_lbl_fecha_nac}</p></td>
+                            <td bgcolor="#EFEFEF">
+                                <p>
+                                    <h:outputText value="#{clienteBean.fecha_nac}">
+                                        <f:convertDateTime type="date" dateStyle="full" />
+                                    </h:outputText>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#EFEFEF" colspan="2" align="center">
+                                <p><h:commandLink action="#{shoppingBean.registrarPedido(clienteBean.cod_cliente)}" value="#{msgs.pedidos_btn_hacer_pedido}" class="botoncarrito"/></p>
+                            </td>
+                        </tr>
+                    </table>
+                </h:form>
+            </div>
+            <!--fin cuerpo-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>
+
+    </h:body>
+</html>

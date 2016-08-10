@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <link href="../css/estilos-cms.css" rel="stylesheet" type="text/css" />
+        <title>Nuevo Usuario</title>
+        <style>
+            body{
+                background: #FFF;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1 class="titulos-admin">Registrar Nuevo Usuario</h1>
+        <h:form>
+            <p>&nbsp;</p>
+            <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="22%"><p class="texto-derecho">Nombres:</p></td>
+                    <td width="78%"><p>
+                            <h:inputText id="nombres" value="#{usuarioBean.nombres}"/>
+                        </p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Nombre de Usuario:</p></td>
+                    <td><p>
+                            <h:inputText id="apellidos" value="#{usuarioBean.usuario}" required="true" requiredMessage="Campo usuario es obligatorio."/>
+                        </p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Contraseña:</p></td>
+                    <td><p>
+                            <h:inputSecret id="email" value="#{usuarioBean.password}"/>
+                        </p></td>
+                </tr>
+                <tr>
+                    <td><p>&nbsp;</p></td>
+                    <td><p>
+                            <h:commandButton class="boton-reg" value="Registrar Usuario" action="#{usuarioBean.crearUsuario()}" style="cursor: pointer;"/>
+                        </p></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>

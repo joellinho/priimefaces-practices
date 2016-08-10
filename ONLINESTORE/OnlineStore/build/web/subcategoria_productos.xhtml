@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Online Store</title>
+        <h:outputStylesheet library="css" name="estilos-tienda.css"/>
+    </h:head>
+    <h:body>
+        <div id="contenedor">
+            <ui:include src="modulos/cabecera_tienda.xhtml"/>
+            <!--fin cabecera-->
+            <ui:include src="modulos/menu_tienda.xhtml"/>
+            <!--fin menu-->
+            <div id="cuerpo-interno">
+                <ui:include src="modulos/ofertas_interno.xhtml"/>
+                <!--fin ofertas-->
+                <div id="contenidos">
+                    <div id="col-categoria">
+                        <h1 class="titu-cat">#{msgs.categoria_productos}</h1>
+                        <ui:include src="modulos/categoria_productos.xhtml" />
+                    </div>
+                    <div id="col-productos">
+                        <h1 class="titulos-productos">#{msgs.lista_productos_subcategoria}</h1>
+                        <ui:repeat value="#{shoppingBean.subCategoriasPorCategoria}" var="subcat">
+                            <div class="productos-interno">
+                                <img src="imagen_productos/imagen_sub_categoria/#{subcat.img_sub_categoria}" width="171" height="212" />
+                                <div class="caja-precios">
+                                    <h1 class="nom-produc">#{subcat.nom_sub_categoria}</h1>
+                                    <h:form>
+                                        <h:commandLink value="#{msgs.ver_lista_productos}" class="list-cat" action="#{shoppingBean.establecerSubCategoria(subcat.cod_sub_categoria)}"/>
+                                    </h:form>
+                                </div>	
+                            </div>
+                        </ui:repeat>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <!--fin caja contenidos-->
+            </div>
+            <!--fin cuerpo-->
+            <ui:include src="modulos/pie_tienda.xhtml"/>
+        </div>
+    </h:body>
+</html>

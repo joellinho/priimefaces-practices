@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link href="../css/estilos-cms.css" rel="stylesheet" type="text/css" />
+        <title>Modificar Usuario</title>
+        <style>
+            body{
+                background: #FFF;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:viewParam name="cod_usuario" value="#{usuarioBean.cod_usuario}"></f:viewParam>
+        </f:metadata>
+        <h1 class="titulos-admin">Actualizar Datos de Usuario</h1>
+        <h:form>
+            <p>&nbsp;</p>
+            <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="22%"><p class="texto-derecho">Código :</p></td>
+                    <td width="78%"><p><h:outputLabel value="#{usuarioBean.cod_usuario}" id="codigo" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Nombres :</p></td>
+                    <td><p><h:inputText value="#{usuarioBean.nombres}" id="nombres" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Usuario:</p></td>
+                    <td><p><h:inputText value="#{usuarioBean.usuario}" id="apellidos" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Password:</p></td>
+                    <td><p><h:inputSecret value="#{usuarioBean.password}" id="email" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p>&nbsp;</p></td>
+                    <td><p><h:commandButton value="Actualizar Datos" class="boton-reg" action="#{usuarioBean.modificarUsuario()}" style="cursor: pointer;"/></p></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+

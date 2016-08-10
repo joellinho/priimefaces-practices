@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <link href="../css/estilos-cms.css" rel="stylesheet" type="text/css" />
+        <title>Nuevo Cliente</title>
+        <style>
+            body{
+                background: #FFF;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1 class="titulos-admin">Registrar Nuevo Cliente</h1>
+        <h:form>
+            <p>&nbsp;</p>
+            <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="22%"><p class="texto-derecho">Nombres:</p></td>
+                    <td width="78%"><p><h:inputText id="nombres" value="#{clienteBean.nombres}"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Apellidos:</p></td>
+                    <td><p><h:inputText id="apellidos" value="#{clienteBean.apellidos}" required="true" requiredMessage="Campo usuario es obligatorio."/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Dirección:</p></td>
+                    <td><p><h:inputText id="direccion" value="#{clienteBean.direccion}"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Teléfono:</p></td>
+                    <td><p><h:inputText id="telefono" value="#{clienteBean.telefono}"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Email:</p></td>
+                    <td><p><h:inputText id="email" value="#{clienteBean.email}"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Clave:</p></td>
+                    <td><p><h:inputSecret id="clave" value="#{clienteBean.clave}"/></p></td>
+                </tr>
+                <tr>
+                    <td><p>&nbsp;</p></td>
+                    <td><p><h:commandLink class="boton-reg" value="Registrar Cliente" action="#{clienteBean.createCMS()}" style="cursor: pointer;"/></p></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>

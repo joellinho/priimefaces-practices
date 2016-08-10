@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link href="../css/estilos-cms.css" rel="stylesheet" type="text/css" />
+        <title>Modificar Cliente</title>
+        <style>
+            body{
+                background: #FFF;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:viewParam name="cod_cliente" value="#{clienteBean.cod_cliente}"></f:viewParam>
+        </f:metadata>
+        <h1 class="titulos-admin">Actualizar Datos de Cliente</h1>
+        <h:form>
+            <p>&nbsp;</p>
+            <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="22%"><p class="texto-derecho">Código :</p></td>
+                    <td width="78%"><p><h:outputLabel value="#{clienteBean.cod_cliente}" id="codigo" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Nombres:</p></td>
+                    <td><p><h:inputText id="nombres" value="#{clienteBean.nombres}" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Apellidos:</p></td>
+                    <td><p><h:inputText id="apellidos" value="#{clienteBean.apellidos}" required="true" requiredMessage="Campo usuario es obligatorio."/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Dirección:</p></td>
+                    <td><p><h:inputText id="direccion" value="#{clienteBean.direccion}" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Teléfono:</p></td>
+                    <td><p><h:inputText id="telefono" value="#{clienteBean.telefono}" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Email:</p></td>
+                    <td><p><h:inputText id="email" value="#{clienteBean.email}" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p class="texto-derecho">Clave:</p></td>
+                    <td><p><h:inputSecret id="clave" value="#{clienteBean.clave}" required="true"/></p></td>
+                </tr>
+                <tr>
+                    <td><p>&nbsp;</p></td>
+                    <td><p><h:commandButton value="Actualizar Datos" class="boton-reg" action="#{clienteBean.modificarCliente()}" style="cursor: pointer;"/></p></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+

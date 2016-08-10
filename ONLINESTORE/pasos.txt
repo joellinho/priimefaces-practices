@@ -1,0 +1,6 @@
+1 instala el oracle con contraseña "ORACLE"          (express edtiton 11)
+2 crea una carpeta en c llamada DATABASE --------c:\DATABASE
+3 ejecuta el system.sql o sopia el contenido y pegalo en la consola
+4 ejecuta el srcipt o pegalo en la consola
+5 descarja el jar oracle  ojdbc6.rar en la pagina de oracle y agregalo al classpath o ruta de librerias
+6 ejecuta el programa no tiene errorer... para el adminitrador es user "admin" password "admin"

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+    </h:head>
+    <h:body>
+        <div id="ofertas">
+            <ul>
+                <ui:repeat value="#{shoppingBean.threeOfertas}" var="oferta">
+                    <li>
+                        <h:form>
+                            <h:commandLink class="sinmargen" action="#{productoBean.mostrarDetalles(oferta.cod_producto)}">
+                                <img src="../banner_productos/banners_chica/#{oferta.banner_oferta_chica}" width="326" height="204" border="0" />
+                            </h:commandLink>
+                        </h:form>
+                    </li>
+                </ui:repeat>
+            </ul>
+        </div>
+    </h:body>
+</html>
+
