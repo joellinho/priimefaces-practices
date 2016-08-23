@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div id="contenedor">
+            <div id="cabecera">
+                <ui:insert name="header">
+                     <h:form>
+                <p:menubar>
+                    <p:menuitem value="usarios" url="faces/usuarios.xhtml"/>
+                    <p:menuitem value="Productos" url="faces/mantenimiento.xhtml"/>
+                    <p:menuitem value="factura" url="faces/factura.xhtml"/>
+                </p:menubar>
+            </h:form>
+                </ui:insert>
+            </div>
+            <div id="menu">
+                <ui:insert name="menus">
+                    
+                </ui:insert>
+            </div>
+            <div id="cuerpo">
+                <ui:insert name="body">
+                    
+                </ui:insert>
+            </div>
+            <div id="pie">
+                <ui:insert name="footer">
+                    <ui:include src="/comun/pie.xhtml"/>
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+</html>

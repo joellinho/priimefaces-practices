@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      locale="#{facesContext.externalContext.requestLocale}"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:body>
+        <ui:composition template="/plantillas/layout.xhtml">
+            <!--theme roller-->
+            <!--convert theme roller to prime-->
+            
+            <!--configuracion theme en web xml-->
+            <ui:define name="body">
+                <h:panelGroup id="pnlCliente" layout="block" style="width: 50%">
+                    <h:form id="master2">
+                        <h:panelGrid columns="3" >
+                            <p:commandButton value="Añadir Producto" action="#{mantenimientoController.createProducto}" 
+                                                 update="new_product" oncomplete="PF('new_product').show()" />
+                            <p:inputText value="#{mantenimientoController.nombreProducto}" style="width: 100px" />
+                            <p:commandButton value="Buscar por nombre" 
+                                             action="#{mantenimientoController.buscarProducto}"
+                                             
+                                             ajax="true" update="@form"/>
+
+                        </h:panelGrid>
+
+                        <h1>TABLA DE PRODUCTOS</h1>
+
+                        <p:dataTable id="tblProductosPrimefaces" var="producto" 
+                                     value="#{mantenimientoController.productos}"
+                                     paginator="true" lazy="true">
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Nro" />
+                                </f:facet>
+                                <h:outputText value="#{mantenimientoController.productos.indexOf(producto)+1}" />
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Codigo" />
+                                </f:facet>
+                                <h:outputText value="#{producto.codigo}" />
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Nombre" />
+                                </f:facet>
+                                <h:outputText value="#{producto.nombre}" />
+                            </p:column>
+                            <p:column  style="width: 250px">
+                                <f:facet name="header">
+                                    <h:outputLabel value="Acciones" />
+                                </f:facet>
+
+                                <p:commandButton value="Editar" action="#{mantenimientoController.saveProducto(producto)}" 
+                                                 update=":detail" oncomplete="PF('detail').show()" >
+                                    <!--<f:attribute name="index" value="1"/>-->
+                                </p:commandButton>
+                                <p:commandButton value="Borrar" 
+                                                 action="#{mantenimientoController.deleteProducto(producto)}"
+                                                 ajax="true" update="@form"></p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+
+
+                        <h:commandLink value="Login" action="login" />
+                    </h:form>
+
+                </h:panelGroup>
+                <p:dialog id="detail" widgetVar="detail">
+                    <h:form>
+                        <p:inputText value="#{mantenimientoController.productoEdit.codigo}" />
+                        <p:inputText value="#{mantenimientoController.productoEdit.nombre}" />
+                        <p:commandButton value="Cerrar" onclick="PF('detail').hide(); return false" />
+                        <p:commandButton value="Guardar" action="#{mantenimientoController.save}" 
+                                         ajax="true" update="master2" oncomplete="PF('detail').hide()" />
+                    </h:form>
+                </p:dialog>
+                <p:dialog id="new_product" widgetVar="new_product">
+                   
+
+                    <h:form>
+                        <h:panelGrid bodyrows="11" columns="2" >
+                            <h:outputLabel value="Nombre:"/>
+                            <h:panelGroup>
+                                <h:inputText value="#{mantenimientoController.productoCreate.nombre}" 
+                                             required="true"
+                                             label="Nombre" 
+                                             id="nombre"/>
+                            </h:panelGroup>
+                            <h:outputLabel value="Codigo:"/>
+                            <h:panelGroup>
+                                <h:inputText value="#{mantenimientoController.productoCreate.codigo}" 
+                                             required="true"
+                                             label="Codigo"
+                                             id="codigo">
+                                </h:inputText>   
+                            </h:panelGroup>
+                            
+                            <p:commandButton value="Añadir" action="#{mantenimientoController.create}"
+                                             ajax="true" update="master2" oncomplete="PF('new_product').hide()"/>
+                            <p:commandButton  value="Cerrar" onclick="PF('new_product').hide(); return false"/>
+                        </h:panelGrid>
+                    </h:form>
+
+                </p:dialog>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
