@@ -17,9 +17,10 @@ import javax.servlet.http.HttpSession;
 @ManagedBean
 @SessionScoped
 public class ShoppingBean {
-
+    CarItemBean selected ;
+    
     public ShoppingBean() {
-
+selected= new CarItemBean();
     }
 
     public List<Producto> getProductosIndex() {
@@ -124,7 +125,25 @@ public class ShoppingBean {
     public void removetoCart(int index) {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         List<CarItemBean> carrito = getCarrito();
+        
+        
         carrito.remove(index);
         session.setAttribute("carrito", carrito);
+    }
+    
+    public void remove(int codigo){
+         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        List<CarItemBean> carrito = getCarrito();
+     Producto producto = new ProductoDAO().mostrarDetalles(codigo);
+
+        CarItemBean item = new CarItemBean();
+        item.setCodigo(codigo);
+        item.setNombre(producto.getNombreProducto());
+        item.setPrecio(producto.getPrecio());
+     int indexe = existe(codigo);
+     if (indexe != -1) {
+         removetoCart(indexe);
+     }
+      session.setAttribute("carrito", carrito);
     }
 }

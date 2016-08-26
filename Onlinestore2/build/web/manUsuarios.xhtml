@@ -48,7 +48,7 @@ and open the template in the editor.
 
         
         
-        <p:dialog id="dlgdatos" widgetVar="wdgdatos" header="#{usuarioBean.accion}">
+                        <p:dialog id="dlgdatos" widgetVar="wdgdatos" header="#{usuarioBean.accion}" modal="true">
             <h:form>
             <p:panelGrid columns="2">
                 <h:outputText value="codigo"/> <p:inputText value="#{usuarioBean.usuario.codigo}" disabled="true"/>

@@ -76,6 +76,7 @@ public class ProductoBean implements Serializable {
 
     public List<Producto> eliminar(Producto producto) {
         lista.remove(producto);
+        limpiar();
         return lista;
 
     }
