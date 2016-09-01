@@ -15,32 +15,32 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        
-         <ui:composition template="./WEB-INF/templates/plantillacms.xhtml">
-        <ui:define name="body">
- 
-           <div id="page-wrapper">
-         <div class="graphs">
-        <h:form>
-        <p:commandButton actionListener="#{pedidosBean.mostrartodos}" value="listar" update="data" />
-        
-        <p:dataTable id="data" value="#{pedidosBean.listaPedidos}" var="pedido">
-            <p:column headerText="codigo" ><h:outputText value="#{pedido.codigo}"/></p:column>  
-            <p:column headerText="importe" ><h:outputText value="#{pedido.cantidad}"/></p:column>  
-            <p:column headerText="fecha" ><h:outputText value="#{pedido.fecha}"/></p:column>  
-            <p:column > <p:commandButton value="eliminar" actionListener="#{pedidosBean.eliminar(pedido)}" update="data"/></p:column>
-                   
-        </p:dataTable>
-        </h:form>
-        <h:form>
-            <p:commandLink value="Ir A La Tienda" action="index.xhtml?faces-redirect=true"/>
-            
-        </h:form>
-         </div></div>
-           
-                
-        </ui:define>
-        
+
+        <ui:composition template="./WEB-INF/templates/plantillacms.xhtml">
+            <ui:define name="body">
+
+                <div id="page-wrapper">
+                    <div class="graphs">
+                        <h:form>
+                            <p:commandButton actionListener="#{pedidosBean.mostrartodos}" value="listar" update="data" />
+
+                            <p:dataTable id="data" value="#{pedidosBean.listaPedidos}" var="pedido">
+                                <p:column headerText="codigo" ><h:outputText value="#{pedido.codigo}"/></p:column>  
+                                <p:column headerText="importe" ><h:outputText value="#{pedido.cantidad}"/></p:column>  
+                                <p:column headerText="fecha" ><h:outputText value="#{pedido.fecha}"/></p:column>  
+                                <p:column > <p:commandButton value="eliminar" actionListener="#{pedidosBean.eliminar(pedido)}" update="data"/></p:column>
+
+                            </p:dataTable>
+                        </h:form>
+                        <h:form>
+                            <p:commandLink value="Ir A La Tienda" action="index.xhtml?faces-redirect=true"/>
+
+                        </h:form>
+                    </div></div>
+
+
+            </ui:define>
+
         </ui:composition>
     </h:body>
 </html>

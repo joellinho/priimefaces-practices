@@ -39,8 +39,9 @@ and open the template in the editor.
                                         <p:outputLabel value="Total Compra  -------------------------------------------------->      :"/><h:outputText style="font-size: 20px" value="#{shoppingBean.calcularTotal()}"/>
                                         <br></br>
                                         <br></br>
-                                        <p:commandButton action="#{shoppingBean.VaciarCar}" value="vacear carrito"/>
+                                        <p:commandButton action="#{shoppingBean.VaciarCar}" value="vacear carrito" update="datos"/>
                                         <p:commandButton action="index.xhtml?faces-redirect=true" value="Seguir comprando"/>
+                                        <p:commandButton action="prueba.xhtml" value="hacer compra"/>
 
                                     </h:form>
 

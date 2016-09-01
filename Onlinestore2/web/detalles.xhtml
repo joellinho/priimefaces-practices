@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui ="http://java.sun.com/jsf/facelets"
-      xmlns:f ="http://java.sun.com/jsf/core">
+      xmlns:f ="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
             
     </h:head>
@@ -53,7 +54,8 @@ and open the template in the editor.
                                       <h5>Rs.#{productoBean.producto.precio} <a href="#">click for offer</a></h5>
 					<div class="available">
 						
-                                                <h4>cantidad</h4><h:inputText value="#{carItemBean.cantidad}"/>
+                                            <h4>cantidad</h4><h:inputText value="#{carItemBean.cantidad}" />
+                                          
 						<div class="btn_form">
                                                 
                                                     <h:commandLink action="#{shoppingBean.addToCart(productoBean.producto.codigo,carItemBean.cantidad)}" value="add to cart"/>	
@@ -79,9 +81,7 @@ and open the template in the editor.
                             </h:form>
 			   	</div>
 			   	<div class="clear"></div>
-			   	<!-- start tabs -->
-			
-		         	<!-- end tabs -->
+			  
 			   	</div>
 			   	<!-- start sidebar -->
 			 <div class="left_sidebar">

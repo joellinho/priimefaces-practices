@@ -70,7 +70,7 @@ public class ProductoBean implements Serializable {
         producto.setPrecio(producto.getPrecio());
         producto.setImagen(producto.getImagen());
 
-        lista.add(producto);
+     
         return "detalles.xhtml?faces-redirect=true";
     }
 

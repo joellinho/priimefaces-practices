@@ -143,6 +143,7 @@ selected= new CarItemBean();
      int indexe = existe(codigo);
      if (indexe != -1) {
          removetoCart(indexe);
+         calcularTotal();
      }
       session.setAttribute("carrito", carrito);
     }
