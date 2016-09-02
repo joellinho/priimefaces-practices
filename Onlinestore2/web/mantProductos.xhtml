@@ -18,8 +18,9 @@ and open the template in the editor.
                 <div id="page-wrapper">
                     <div class="graphs">
                         <h:form id="frm">
-                            <p:commandButton value="nuevo" actionListener="#{productoBean.setAccion('nuevo')}"  oncomplete="PF('wdgdatos').show()" update=":dlgdatos" />
-                            <p:commandButton value="mostra" actionListener="#{productoBean.mostraTodos()}" update="data"/>
+                            <p:commandButton value="Nuevo" actionListener="#{productoBean.setAccion('nuevo')}"  oncomplete="PF('wdgdatos').show()" update=":dlgdatos" />
+                            <h:inputText value="#{productoBean.producto.nombreProducto}"  /><p:commandButton value="Buscar"  actionListener="#{productoBean.buscarPorNombre()}" update="data"/>
+                            <p:commandButton value="Mostrar" actionListener="#{productoBean.mostraTodos()}" update="data"/>
                             <p:dataTable id="data" value="#{productoBean.lista}" var="producto" style="width: 1000px " >
                                 <p:column headerText="codigo" ><h:outputText value="#{producto.codigo}"/></p:column>
                                 <p:column headerText="nombre" ><h:outputText value="#{producto.nombreProducto}"/></p:column>

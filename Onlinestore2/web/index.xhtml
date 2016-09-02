@@ -24,7 +24,7 @@ and open the template in the editor.
              
                 <div class="da-slide">
               
-                <h2>welcome to aditii</h2>
+                    <h2>#{msgs.bienvenido}</h2>
                 <p><h:outputText value="#{producto.descripcion}"/></p>
                 
                 <!--<a href="details.html" class="da-link">shop now</a>-->
@@ -59,7 +59,7 @@ and open the template in the editor.
                     <div class="cau_left">
                         <h4><h:outputText value="#{productos.nombreProducto}"/></h4>
                         <h:form>
-                         <h:commandLink action="#{productoBean.mostrarDetalles(productos.codigo)}" class="da-link" value="Detalles"/>
+                            <h:commandLink action="#{productoBean.mostrarDetalles(productos.codigo)}" class="da-link" value="#{msgs.detalles}"/>
                         </h:form>
                         
                         

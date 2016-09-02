@@ -110,18 +110,22 @@ public class UsuarioBean {
     }
 
     public String login() {
-        String resultado="";
-        String password = this.usuario.getPassword();
-        mostrarTodos();
-        for (int i = 0; i <= lista.size(); i++) {
-            if (password.equals("123456")) {
+       String resultado="";
+       mostrarTodos();
+        UsuarioDAO usuarioDAo = new UsuarioDAO();
+           
+            if (usuarioDAo.login(usuario)) {
                resultado= "cms-admin.xhtml?faces-redirect=true";
+              
+               
+                
             } else{
             resultado="unautorized.xhtml";
             }
-        }
-        System.out.println("CONTRASEÑA ="+password);
-        return resultado;
+    return resultado;   
+    }
+        
+        
         
     }
-}
+

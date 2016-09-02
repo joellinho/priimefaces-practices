@@ -47,7 +47,7 @@ public class ProductoDAO {
         bean2.setCodigoSubcategoria(1);
         bean2.setNombreProducto("polo negro");
         bean2.setImagen("polonegro.jpg");
-        bean2.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean2.setDescripcion("Polo Negro con bolsillo EVANS. Con tratamiento anti manchas 3m. Cuello clásico y refuerzo de media luna bajo el cuello en espalda. Tapeta y botones igualados a color de prenda. Mangas con puños en canalé. Bajos rectos con aperturas laterales. Tratamiento scotchgard de 3m anti manchas.");
         bean2.setPrecio(30.00);
         bean2.setImagenChica("");
         bean2.setImagenGrande("");
@@ -60,7 +60,7 @@ public class ProductoDAO {
         bean3.setCodigoSubcategoria(1);
         bean3.setNombreProducto("tacones rojos");
         bean3.setImagen("tacosrojos.jpg");
-        bean3.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean3.setDescripcion("Platanitos Boutique es la marca referente de Moda para Mujer en el Perú. El objetivo de Platanitos siempre ha sido fusionar lo último de las tendencias mundiales con la rapidez y eficiencia en el servicio y disposición de colección, llegando a manejar de forma excelente el concepto de Moda Rápida. (Fast Fashion).");
         bean3.setPrecio(30.00);
         bean3.setImagenChica("");
         bean3.setImagenGrande("");
@@ -99,7 +99,7 @@ public class ProductoDAO {
         bean6.setCodigoSubcategoria(1);
         bean6.setNombreProducto("polo plomo");
         bean6.setImagen("poloplomo.jpg");
-        bean6.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean6.setDescripcion("Camisa de manga corta Corte recto - regular fit Tira de botones doble Cuello plegable Aplicacion  logo Bolsillo en la parte izquierda del pecho Material: 100% Algodon");
         bean6.setPrecio(30.00);
         bean6.setImagenChica("");
         bean6.setImagenGrande("");
@@ -112,7 +112,7 @@ public class ProductoDAO {
         bean7.setCodigoSubcategoria(1);
         bean7.setNombreProducto("polera blanco manga negra");
         bean7.setImagen("");
-        bean7.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean7.setDescripcion("Camiseta de manga larga en punto elástico con cuello redondo.Mangas con puños en canalé. Bajos rectos con aperturas laterales. Tratamiento scotchgard de 3m anti manchas.");
         bean7.setPrecio(30.00);
         bean7.setImagenChica("");
         bean7.setImagenGrande("polerablancanegragrande.png");
@@ -125,7 +125,7 @@ public class ProductoDAO {
         bean8.setCodigoSubcategoria(1);
         bean8.setNombreProducto(" polera  blanca manga roja ");
         bean8.setImagen("");
-        bean8.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean8.setDescripcion("Camiseta pecho blanco  manga roja larga en punto elástico con cuello redondo.Mangas con puños en canalé. Bajos rectos con aperturas laterales. Tratamiento scotchgard de 3m anti manchas. ");
         bean8.setPrecio(30.00);
         bean8.setImagenChica("");
         bean8.setImagenGrande("polerarojablancagrande.png");
@@ -138,7 +138,7 @@ public class ProductoDAO {
         bean9.setCodigoSubcategoria(1);
         bean9.setNombreProducto("polo blanco levis");
         bean9.setImagen("");
-        bean9.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean9.setDescripcion("Polo Blanco  Lewis. Con tratamiento anti manchas 3m. Cuello clásico y refuerzo de media luna bajo el cuello en espalda. Tapeta y botones igualados a color de prenda. Mangas con puños en canalé. Bajos rectos con aperturas laterales. Tratamiento scotchgard de 3m anti manchas. ");
         bean9.setPrecio(30.00);
         bean9.setImagenChica("");
         bean9.setImagenGrande("poloblancogrande.png");
@@ -151,7 +151,7 @@ public class ProductoDAO {
         bean10.setCodigoSubcategoria(1);
         bean10.setNombreProducto("zapatilla negra convert");
         bean10.setImagen("");
-        bean10.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean10.setDescripcion("Las Converse Chuck Taylor All Star Sting Ray Metallic Leather son las mismas sneakers que ya conoces, pero disponibles ahora en una piel premium con acabado de raya metalizado que aporta una nueva expresión a la silueta legendaria. (No te preocupes, la suela de caucho vulcanizado clásica y la autenticidad cultural permanecen intactas). Y como siempre, con el tiempo mejoran. ");
         bean10.setPrecio(30.00);
         bean10.setImagenChica("");
         bean10.setImagenGrande("zapatillanegragrande.png");
@@ -164,7 +164,7 @@ public class ProductoDAO {
         bean11.setCodigoSubcategoria(1);
         bean11.setNombreProducto("zapato marron bata");
         bean11.setImagen("");
-        bean11.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean11.setDescripcion("Los zapatos para hombre modelo Metropole son de color marrón y tienen un estilo casual, ideal para usarlos en cualquier compromiso o evento importante, haciéndote lucir espectacular. El modelo Metropole tiene un diseño con pasadores y costuras en contraste en la parte superior. Para su elaboración se empleó cuero de la más alta calidad; al adquirirlo te garantiza un calzado de gran resistencia y durabilidad. Su capellada áspera le da ese toque de elegancia que tanto buscas en todos tus zapatos ");
         bean11.setPrecio(30.00);
         bean11.setImagenChica("zapatomarronchico.jpg");
         bean11.setImagenGrande("");
@@ -177,7 +177,7 @@ public class ProductoDAO {
         bean12.setCodigoSubcategoria(1);
         bean12.setNombreProducto("polo negro evans");
         bean12.setImagen("");
-        bean12.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean12.setDescripcion("Polo Negro con bolsillo EVANS. Con tratamiento anti manchas 3m. Cuello clásico y refuerzo de media luna bajo el cuello en espalda. Tapeta y botones igualados a color de prenda. Mangas con puños en canalé. Bajos rectos con aperturas laterales. Tratamiento scotchgard de 3m anti manchas. ");
         bean12.setPrecio(30.00);
         bean12.setImagenChica("polonegrochico.jpg");
         bean12.setImagenGrande("");
@@ -190,7 +190,15 @@ public class ProductoDAO {
         bean13.setCodigoSubcategoria(1);
         bean13.setNombreProducto("jean Azul marino piers");
         bean13.setImagen("");
-        bean13.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean13.setDescripcion("Material de correa	Tela\n" +
+"Forma de la caja	Cuadrado\n" +
+"Tipo de reloj	Casual\n" +
+"Color	Azul Oscuro\n" +
+"Condición del producto	Nuevo\n" +
+"main_category	10642\n" +
+"Modelo	skinny hombre pitillo\n" +
+"Tamaño (L x P x A cm)	25×3×20\n" +
+"Garantía del producto	De haber falla de fábrica, el cambio se efectuará los 7 primeros días hábiles. ");
         bean13.setPrecio(30.00);
         bean13.setImagenChica("jeanazulchico.jpg");
         bean13.setImagenGrande("no");
@@ -203,7 +211,7 @@ public class ProductoDAO {
         bean14.setCodigoSubcategoria(1);
         bean14.setNombreProducto("zapato marron bata");
         bean14.setImagen("");
-        bean14.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean14.setDescripcion("Los zapatos para hombre modelo Metropole son de color marrón y tienen un estilo casual, ideal para usarlos en cualquier compromiso o evento importante, haciéndote lucir espectacular. El modelo Metropole tiene un diseño con pasadores y costuras en contraste en la parte superior. Para su elaboración se empleó cuero de la más alta calidad; al adquirirlo te garantiza un calzado de gran resistencia y durabilidad. Su capellada áspera le da ese toque de elegancia que tanto buscas en todos tus zapatos ");
         bean14.setPrecio(30.00);
         bean14.setImagenChica("zapatomarronchico.jpg");
         bean14.setImagenGrande("no");
@@ -215,7 +223,7 @@ public class ProductoDAO {
         bean15.setCodigoSubcategoria(1);
         bean15.setNombreProducto("polo negro evans");
         bean15.setImagen("");
-        bean15.setDescripcion("Nam lobortis ipsum dolor, ut accumsan est tincidunt nec. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut tempus hendrerit libero, non tincidunt felis auctor id. Ut id nibh a mauris ullamcorper suscipit sit amet ac nisl. Sed eget orci leo. Nullam vel tortor semper orci dapibus dapibus ");
+        bean15.setDescripcion("Polo Negro con bolsillo EVANS. Con tratamiento anti manchas 3m. Cuello clásico y refuerzo de media luna bajo el cuello en espalda. Tapeta y botones igualados a color de prenda. Mangas con puños en canalé. Bajos rectos con aperturas laterales. Tratamiento scotchgard de 3m anti manchas. ");
         bean15.setPrecio(30.00);
         bean15.setImagenChica("polonegrochico.jpg");
         bean15.setImagenGrande("");
@@ -287,7 +295,18 @@ public class ProductoDAO {
         }
         return lista;
     }
-
+    public List<Producto> buscarPorNombre(Producto producto){
+        
+        List<Producto> listafiltrada= new ArrayList<>();
+        for(int i=1;i<=fuente.size();i++){
+        if(fuente.get(i).getNombreProducto().contains(producto.getNombreProducto())){
+        listafiltrada.add(fuente.get(i));
+        }
+        }
+        
+        return listafiltrada;
+    
+    }
     public Producto mostrarDetalles(int codigo) {
 
         Producto producto = new Producto();

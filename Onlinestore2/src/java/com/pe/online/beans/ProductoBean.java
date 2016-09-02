@@ -13,6 +13,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ValueChangeEvent;
 
 @ManagedBean
 @SessionScoped
@@ -21,6 +22,7 @@ public class ProductoBean implements Serializable {
     Producto producto;
 
     private List<Producto> lista;
+     private List<Producto> listaFiltrada;
     private String accion;
 
     public String getAccion() {
@@ -70,7 +72,6 @@ public class ProductoBean implements Serializable {
         producto.setPrecio(producto.getPrecio());
         producto.setImagen(producto.getImagen());
 
-     
         return "detalles.xhtml?faces-redirect=true";
     }
 
@@ -82,20 +83,20 @@ public class ProductoBean implements Serializable {
     }
 
     public void seleccionar(Producto prod) {
-       
+
         int index = lista.indexOf(prod);
         producto = lista.get(index);
-          this.accion = "modificar";
+        this.accion = "modificar";
     }
 
     public List<Producto> editar() {
-       
+
         int index = lista.indexOf(producto);
 
         lista.add(index, producto);
-        lista.remove(index+1);
-        accion="";
-        
+        lista.remove(index + 1);
+        accion = "";
+
         return lista;
 
     }
@@ -125,14 +126,20 @@ public class ProductoBean implements Serializable {
             case "nuevo":
                 adicionar();
                 limpiar();
-                
+
                 break;
             case "modificar":
                 editar();
                 limpiar();
-               
+
                 break;
 
         }
     }
+
+    public void buscarPorNombre() {
+       ProductoDAO pordao = new ProductoDAO();
+       lista=pordao.buscarPorNombre(producto);
+    }
+
 }

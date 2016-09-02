@@ -15,21 +15,23 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-           <div class="header_bg">
+        <div class="header_bg">
             <div class="wrap">
                 <div class="header">
                     <div class="logo">
-                        <a href="index.xhtml.html"><img src="images/logo.png" alt=""/> </a>
+                        <a href="index.xhtml"><img src="images/logo.png" alt=""/> </a>
                     </div>
+
                     <div class="h_icon">
+                                   
                         <ul class="icon1 sub-icon1">
                             <h:form>
-                            <li><a class="active-icon c1" href="carrito.xhtml"><i>#{shoppingBean.calcularTotal()}</i></a>
-                                <ul class="sub-icon1 list">
-                                    <li><h3>shopping cart empty</h3><a href=""></a></li>
-                                    <li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
-                                </ul>
-                            </li>
+                                <li><a class="active-icon c1" href="carrito.xhtml"><i>#{shoppingBean.calcularTotal()}</i></a>
+                                    <ul class="sub-icon1 list">
+                                        <li><h:commandLink class="dropdown-toggle avatar" action="#{shoppingBean.toEnglish()}" ><img src="images/eeuu.png" style="height: 50px;width: 100px"/></h:commandLink>
+                                            <h:commandLink class="dropdown-toggle avatar" action="#{shoppingBean.toSpanish()}"><img src="images/espana.png" style="height:50px;width: 100px"/></h:commandLink></li>
+                                    </ul>
+                                </li>
                             </h:form>
                         </ul>
                     </div>

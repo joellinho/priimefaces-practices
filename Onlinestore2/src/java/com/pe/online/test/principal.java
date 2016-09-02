@@ -6,6 +6,7 @@
 package com.pe.online.test;
 
 import com.pe.online.beans.ProductoBean;
+import com.pe.online.beans.UsuarioBean;
 import com.pe.online.dao.PedidosDAO;
 import com.pe.online.dao.ProductoDAO;
 import com.pe.online.dao.UsuarioDAO;
@@ -107,13 +108,28 @@ public class principal {
 //            System.out.println(producto1.getCodigo()+"------"+producto1.getNombreProducto());
 //        }
   
-    UsuarioDAO dao = new UsuarioDAO();
-    List<Usuario> listauser =dao.getAll();
-        for (Usuario usuario : listauser) {
-            System.out.println(usuario.getUsuario());
-            
+//    UsuarioDAO dao = new UsuarioDAO();
+//    List<Usuario> listauser =dao.getAll();
+//        for (Usuario usuario : listauser) {
+//            System.out.println(usuario.getUsuario());
+//            
+//        }
+
+//Usuario usuario = new Usuario();
+//usuario.setPassword("12345676");
+//UsuarioDAO usuarioDao = new UsuarioDAO();
+//        System.out.println(usuarioDao.login(usuario));
+  
+
+Producto producto= new Producto();
+producto.setNombreProducto(" ");
+ProductoDAO prodao = new ProductoDAO();
+
+List<Producto> listaproductos=prodao.buscarPorNombre(producto);
+        for (Producto productoiter : listaproductos) {
+            System.out.println(productoiter.getNombreProducto()+productoiter.getDescripcion());
         }
-    
+
+
     }
-    
 }

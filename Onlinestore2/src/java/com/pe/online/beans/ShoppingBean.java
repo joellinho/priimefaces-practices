@@ -9,6 +9,7 @@ import com.pe.online.dao.ProductoDAO;
 import com.pe.online.entity.Producto;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -147,4 +148,16 @@ selected= new CarItemBean();
      }
       session.setAttribute("carrito", carrito);
     }
+    
+    
+     public void toEnglish() {
+        FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("en"));
+        FacesContext.getCurrentInstance().getApplication().setDefaultLocale(new Locale("en"));
+    }
+
+    public void toSpanish() {
+        FacesContext.getCurrentInstance().getViewRoot().setLocale(new Locale("es"));
+        FacesContext.getCurrentInstance().getApplication().setDefaultLocale(new Locale("es"));
+    }
+    
 }
